@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+// import Child from './components/child';
+import UseState from './components/useState';
+import Home from './pages/home'
 
 function App() {
+  const copyings = ['contexmenu', 'selectstart', 'copy']
+  copyings.forEach((env) => {
+    document.addEventListener(env,function(event) {
+      return event.returnValue = false
+    })
+  })
+
+  
+
+  
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Home />
     </div>
   );
 }
