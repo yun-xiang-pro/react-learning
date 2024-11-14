@@ -1,26 +1,25 @@
 import './App.css';
-// import Child from './components/child';
-import UseState from './components/useState';
-import Home from './pages/home'
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+
+import Home from './pages/home';
+import Page1 from './pages/page1';
+import Page2 from './pages/page2';
+import Page3 from './pages/page3';
+
 
 function App() {
-  const copyings = ['contexmenu', 'selectstart', 'copy']
-  copyings.forEach((env) => {
-    document.addEventListener(env,function(event) {
-      return event.returnValue = false
-    })
-  })
-
-  
-
-  
-
-
   return (
     <div className="App">
-      <Home />
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/page1/:id' element={<Page1/>}/>
+          <Route path='/page3' element={<Page3/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
+
 
 export default App;
