@@ -18,7 +18,7 @@ const Home = () => {
 
     return (
         <div>
-            <h1>react-router createBrowserRouter</h1>
+            <h1>react-router createHashRouter</h1>
             <Outlet/>
             <NavLink  to={'/'}>Home</NavLink>
             {/* <NavLink to={'/page1/123'}>跳转到Page1页面</NavLink> */}
