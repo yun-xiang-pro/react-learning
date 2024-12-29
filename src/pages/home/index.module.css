@@ -1,0 +1,14 @@
+.home{
+    display: flex;
+   
+}
+.articleType{
+    width: 25%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    margin-left: 10px;
+        
+}

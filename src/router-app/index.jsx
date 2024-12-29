@@ -1,4 +1,4 @@
-import { useRoutes, createBrowserRouter,RouterProvider,createHashRouter } from "react-router-dom"
+import {  Navigate, useRoutes } from 'react-router-dom';
 import Home from "../pages/home"
 import Page1 from "../pages/page1"
 import Page2 from "../pages/page2"
@@ -6,6 +6,14 @@ import Page3 from "../pages/page3"
 import Detail from "../pages/page1/detail"
 import Detail2 from "../pages/page1/detail/detail2"
 import NotFound from "../pages/not-found"
+import Java from "../pages/java"
+import Js from "../pages/js"
+import Node from "../pages/node"
+import Pathyon from "../pages/pathyon"
+import AddArticle from "../pages/add-article"
+import ArticleList from '../pages/article-list'
+
+
 
 // 路由模式	url表现	底层原理
 // history	url/login	HTML5 的history对象+pushState事件
@@ -17,7 +25,7 @@ import NotFound from "../pages/not-found"
 
 
 const RouterApps = () => {
-    const elements = createHashRouter([
+    const elements = useRoutes([
         {
             path:'/',
             element:<Home/>,
@@ -46,13 +54,36 @@ const RouterApps = () => {
             element:<Page3/>
         },
         {
-            path:'/pages/page1/detail',
-            element:<Detail/>
+            path:'/pages/add-article',
+            element:<AddArticle/>
+        },
+        {
+            path:'/pages/article-list',
+            element:<ArticleList/>
+        },
+
+        {
+            path:'/pages/java',
+            element:<Java/>
+        },
+        {
+            path:'/pages/pathyon',
+            element:<Pathyon/>
+        },
+        {
+            path:'/pages/node',
+            element:<Node/>
+        },
+        {
+            path:'/pages/js',
+            element:<Js/>
         },
         {
             path:'/pages/page1/detail/detail2',
             element:<Detail2/>
         },
+
+
         {
             path:'*',
             element:<NotFound/>
@@ -62,7 +93,9 @@ const RouterApps = () => {
 
     return (
         <div>
-           <RouterProvider router={elements}/>
+          {
+            elements
+          }
         </div>
     )
 
